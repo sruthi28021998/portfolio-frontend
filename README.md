@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Frontend
 
-## Getting Started
+The public-facing portfolio website. Fetches all content dynamically from the custom CMS backend — no content is hardcoded.
 
-First, run the development server:
+## Tech Stack
+- Next.js 14 (App Router)
+- Tailwind CSS v4
+- Server-side data fetching (no client-side loading spinners needed on first load)
+
+## Pages
+| Route | Description |
+|---|---|
+| `/` | Home — About summary + featured projects |
+| `/about` | Full bio, skills, experience, testimonials |
+| `/projects` | All projects |
+| `/blog` | Published blog posts |
+| `/blog/[slug]` | Single blog post |
+| `/contact` | Contact form → posts to backend `/contact` |
+
+## Project Structure
+
+app/ → page routes (App Router)
+components/ → Navbar, Footer
+lib/ → api.js (fetch helpers for backend communication)
+
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env .env local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fill in `.env.local`:
+NEXT_PUBLIC_API_URL=http://localhost:5000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run it:
+```bash
+npm run dev
+```
 
-## Learn More
+Visit `http://localhost:3000`.
 
-To learn more about Next.js, take a look at the following resources:
+## How Content Gets Here
+All content (About, Skills, Projects, Blogs, Experience, Testimonials) is entered through the [portfolio-admin-panel](https://github.com/<your-username>/portfolio-admin-panel) — this app only displays it. There is no admin login or content editing here.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
+Deployed on [Vercel](https://vercel.com).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Environment variable:** `NEXT_PUBLIC_API_URL` set to the live backend URL
 
-## Deploy on Vercel
+Live URL: `https://portfolio-frontend.vercel.app` *(update with your actual URL)*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Related Repos
+- [portfolio-backend-cms](https://github.com/<your-username>/portfolio-backend-cms) — API and database
+- [portfolio-admin-panel](https://github.com/<your-username>/portfolio-admin-panel) — CMS admin dashboard
