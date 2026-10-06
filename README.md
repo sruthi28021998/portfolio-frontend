@@ -50,8 +50,8 @@ Deployed on [Vercel](https://vercel.com).
 
 - **Environment variable:** `NEXT_PUBLIC_API_URL` set to the live backend URL
 
-Live URL: `https://portfolio-frontend.vercel.app` *(update with your actual URL)*
+Live URL: `https://portfolio-frontend-rho-ashen.vercel.app`
 
 ## Related Repos
-- [portfolio-backend-cms](https://github.com/<your-username>/portfolio-backend-cms) — API and database
-- [portfolio-admin-panel](https://github.com/<your-username>/portfolio-admin-panel) — CMS admin dashboard
+- [portfolio-backend-cms](https://github.com/sruthi28021998/portfolio-backend-cms.git) — API and database
+- [portfolio-admin-panel](https://github.com/sruthi28021998/portfolio-admin-panel.git) — CMS admin dashboard
